@@ -162,10 +162,10 @@ fun tourOrdinateur(pv: Int, def: Int, atk: Int, nomAtk: String, nomCible: String
         soins(nomAtk,nomCible,atk,pv,pvMax, boolean)
     }
 }
-fun tourCombat(pv: Int, def: Int, atk: Int, nomAtk: String, nomCible: String,pvMax: Int, boolean: Boolean,inventaire: MutableList<String>){
+fun tourCombat(pvJ: Int, defJ: Int, atkJ: Int,pvO: Int, defO: Int, atkO: Int, nomJoueur: String, nomOrdinateur: String, pvMaxJ: Int,pvMaxO: Int, booleanJ: Boolean, booleanO: Boolean, inventaireJ: MutableList<String>){
     println("debut tour")
-    tourJoueur(pv, def, atk, nomAtk, nomCible,pvMax, boolean,inventaire)
-    tourOrdinateur(pv, def, atk, nomCible, nomAtk,pvMax, boolean)
+    tourJoueur(pvJ, defJ, atkJ, nomJoueur, nomOrdinateur,pvMaxJ, booleanJ,inventaireJ)
+    tourOrdinateur(pvO, defO, atkO, nomOrdinateur, nomJoueur,pvMaxO, booleanO)
     println("fin du tour")
 }
 
@@ -182,5 +182,5 @@ fun main(){
     //choisirItem("jaja",mutableListOf("obj1","obj2","obj3","obj4"))
     //tourJoueur(200,10,20,"jaja","youssef",250,true,mutableListOf("obj1","obj2","obj3","obj4"))
     //tourOrdinateur(200,10,20,"jaja","youssef",250,true)
-    //tourCombat(200,10,20,"jaja","youssef",250,true,mutableListOf("obj1","obj2","obj3","obj4"))
+    //tourCombat(200,10,20,100,5,10,"jaja","youssef",250,125,false,true,mutableListOf("obj1","obj2","obj3","obj4"))
 }
